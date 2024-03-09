@@ -1,0 +1,340 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  font-family: "OpenSans";
+}
+
+.flex {
+  display: flex;
+}
+
+@font-face {
+  font-family: "OpenSans";
+  src:local("OpenSans-Regular"),
+   url(/fonts/OpenSans-Regular.woff2) format("woff2"),
+   url(/fonts/OpenSans-Regular.woff) format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1700px;
+  padding: 50px;
+  background-color: rgba(66, 66, 66, 1);
+  flex-wrap: wrap;
+}
+
+/*check-box*/
+
+.check-box-container {
+  flex-direction: column;
+  width: 176px;
+  background: #FFFFFF;
+  border-radius: 10px;
+  padding-top: 21px;
+  padding-bottom: 29px;
+  padding-left: 30px;
+  margin-bottom: 100px;
+}
+
+.check-box__pgh {
+  margin-bottom: 23px;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 25px;
+}
+
+.check-box__label:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.check-box {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.check-box__text {
+  position: relative;
+  padding-left: 24px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 19px;
+  transition: color .3s ease-in-out;
+  cursor: pointer;
+}
+
+.check-box__text::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 15px;
+  height: 15px;
+  border: 1px solid rgba(153, 153, 153, 1);
+  border-radius: 3px;
+  transition: border-color 0.3s ease-in-out;
+}
+
+.check-box__text::before {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 10px;
+  height: 10px;
+  background-image: url(/img/arrow.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  opacity: 0;
+  transition: opacity .3s ease-in-out;
+}
+
+.check-box:checked + .check-box__text::after {
+  border-color: rgba(204, 178, 110, 1);
+}
+
+.check-box:checked + .check-box__text::before {
+  opacity: 1;
+}
+
+.check-box:focus-visible + .check-box__text {
+  color: rgba(204, 178, 110, 1);
+}
+
+.check-box:focus-visible + .check-box__text::after {
+  border-color: rgba(204, 178, 110, 1);
+}
+
+/*select*/
+
+.select-container {
+  margin-bottom: 300px;
+}
+
+.header_choices {
+  width: 176px;
+}
+
+.header_choices .choices__inner {
+  position: relative;
+  box-sizing: border-box;
+  background-color: rgba(255, 255, 255, 1);
+  border-radius: 10px;
+  border: 1px solid #CCB26E;
+  z-index: 2;
+}
+
+.header_choices.choices[data-type*=select-one]::after {
+  content: '';
+  position: absolute;
+  top: 45%;
+  right: 10px;
+  border: none;
+  border-bottom: 1px solid #666666;
+  border-right: 1px solid #666666;
+  width: 8px;
+  height: 8px;
+  transform: rotate(45deg);
+  transition: transform .3s ease-in-out;
+  transition: border-color .3s ease-in-out;
+  z-index: 2;
+}
+
+.header_choices.choices[data-type*=select-one].is-open::after {
+  margin-top: 0;
+  transform: rotate(225deg);
+  border-color: #CCB26E;
+}
+
+.header_choices .choices__list--dropdown {
+  border-radius: 0 0 10px 10px;
+  border-color: #CCB26E;
+  border-top: none;
+  margin-top: -7px;
+  z-index: 1;
+  padding-top: 20px;
+  padding-bottom: 15px;
+}
+
+.choices__list--dropdown .choices__item--selectable.is-highlighted {
+  background-color: rgba(255, 255, 255, 1);
+}
+
+.choices__item.choices__item--choice.choices__item--selectable {
+  padding-right: 75px;
+}
+
+.choices .choices__list.choices__list--dropdown .choices__placeholder {
+  display: none;
+}
+
+/*map*/
+
+.map-container {
+  width: 460px;
+  height: 460px;
+  margin-bottom: 100px;
+}
+
+[class*="copyrights-pane"] {
+  display: none;
+}
+
+/*scrollbar*/
+
+.text-container {
+  width: 400px;
+  height: 310px;
+  background-color: #FFFFFF;
+  padding: 20px 30px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 24px;
+  overflow: auto;
+  margin-bottom: 100px;
+}
+
+.simplebar-scrollbar::before {
+  background-color: rgba(204, 178, 110, 1);
+}
+
+/*form*/
+
+.js-form {
+  flex-direction: column;
+  background-color: rgba(0, 0, 0, 1);
+  border-radius: 10px;
+  width: 440px;
+  padding: 38px 30px;
+  margin-bottom: 100px;
+}
+
+.form__input {
+  width: 100%;
+  margin-bottom: 31px;
+  border: 1px solid rgba(255, 92, 0, 1);
+  border-radius: 10px;
+  padding: 24px 20px;
+}
+
+.form-group {
+  width: 100%;
+}
+
+.form__input:focus {
+  outline: none;
+}
+
+.form__btn {
+  background-color: rgba(255, 92, 0, 1);
+  color: #FFFFFF;
+  padding: 17px 53px;
+  border-radius: 10px;
+  max-width: 192px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.form__btn:hover {
+  background-color: rgba(255, 150, 0, 1);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+/*tooltip*/
+
+.tooltip-container {
+  width: 375px;
+  background-color: rgba(255, 255, 255, 1);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 24px;
+  padding: 20px 30px;
+  padding-right: 60px;
+  margin-bottom: 100px;
+}
+
+.tooltip, .tooltip-btn {
+  position: relative;
+  margin-left: 5px;
+  background-color: #BCBCBC;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+  border: none;
+}
+
+.tooltip-text {
+  position: absolute;
+  background-color: #666666;
+  color: white;
+  padding: 7px 15px;
+  max-width: 170px;
+  width: max-content;
+  word-wrap: break-word;
+  left: 0;
+  top: 0;
+  transform: translate(calc(-100%/2 + 10px), calc(-100% - 10px));
+  display: none;
+  transition: display .3s ease-in-out;
+}
+
+.tooltip-text::after {
+  content: '';
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  background-color: #666666;
+  left: calc(100%/2 - 5px);
+  bottom: -3px;
+  transform: rotate(45deg);
+  display: none;
+  transition: display .3s ease-in-out;
+}
+
+.tooltip:hover .tooltip-text {
+  display: block;
+}
+
+.tooltip:hover .tooltip-text::after {
+  display: block;
+}
+
+.tooltip:hover {
+  background-color: #CCB26E;
+}
+
+.tippy-box[data-theme~='gray'] {
+  background-color: #666666;
+  color: white;
+  border-radius: 0;
+  word-wrap: break-word;
+}
+
+.tippy-arrow {
+  color: #666666;
+}
+
+.tooltip-btn:hover {
+  background-color: #CCB26E;
+}

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>15</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js@9.0.1/public/assets/styles/choices.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.css" />
+  <link rel="stylesheet" href="/css/style.css">
+  <style>
+    [class*="ground-pane"] {
+      filter: grayscale(1);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="check-box-container flex">
+      <p class="check-box__pgh">Категории:</p>
+      <label class="check-box__label">
+        <input type="checkbox" class="check-box">
+        <span class="check-box__text">Динозавры</span>
+      </label>
+      <label class="check-box__label">
+        <input type="checkbox" class="check-box">
+        <span class="check-box__text">Медведи</span>
+      </label>
+      <label class="check-box__label">
+        <input type="checkbox" class="check-box">
+        <span class="check-box__text">Косули</span>
+      </label>
+      <label class="check-box__label">
+        <input type="checkbox" class="check-box">
+        <span class="check-box__text">Лисы</span>
+      </label>
+      <label class="check-box__label">
+        <input type="checkbox" class="check-box">
+        <span class="check-box__text">Волки</span>
+      </label>
+      <label class="check-box__label">
+        <input type="checkbox" class="check-box">
+        <span class="check-box__text">Олени и лоси</span>
+      </label>
+    </div>
+    <div class="select-container">
+      <select id="choices" class="choices">
+        <option selected disabled value="">Материал</option>
+        <option value="Древесина">Древесина</option>
+        <option value="Металл">Металл</option>
+        <option value="Камень">Камень</option>
+        <option value="Пластик">Пластик</option>
+        <option value="Композитный">Композитный</option>
+        <option value="Гипс">Гипс</option>
+      </select>
+    </div>
+    <div id="map" class="map-container"></div>
+    <div data-simplebar class="text-container" id="scroll">
+      Сложно сказать, почему многие известные личности представлены в исключительно положительном свете. Лишь активно
+      развивающиеся страны третьего мира будут объективно рассмотрены соответствующими инстанциями. Мы вынуждены
+      отталкиваться от того, что высокотехнологичная концепция общественного уклада представляет собой интересный
+      эксперимент проверки глубокомысленных рассуждений. Имеется спорная точка зрения, гласящая примерно следующее:
+      непосредственные участники технического прогресса освещают чрезвычайно интересные особенности картины в целом,
+      однако конкретные выводы, разумеется, обнародованы. Значимость этих проблем настолько очевидна, что
+      социально-экономическое развитие, а также свежий взгляд на привычные вещи - безусловно открывает новые горизонты
+      для первоочередных требований.
+    </div>
+    <form action="" class="js-form form flex">
+      <div class="form-group">
+        <label for="name"></label>
+        <input type="text" placeholder="Имя*" class="form__input form-control" data-validate-field="name" id="name">
+      </div>
+      <div class="form-group">
+        <label for="tel"></label>
+        <input type="tel" placeholder="Телефон*" class="form__input form-control" data-validate-field="tel"
+          data-validate-rules="phone" id="tel">
+      </div>
+      <div class="form-group">
+        <label for="email"></label>
+        <input type="email" placeholder="Email*" class="form__input form-control" data-validate-field="email"
+          id="email">
+      </div>
+      <button class="form__btn btn btn-primary" type="submit">Заказать</button>
+    </form>
+    <div class="tooltip-container">
+      Следует отметить, что социально-экономическое развитие способствует повышению качества переосмысления
+      внешнеэкономических политик.
+      <div class="tooltip">i
+        <div class="tooltip-text">Глава 2, страница 176</div>
+      </div>
+    </div>
+    <div class="tooltip-container">
+      Следует отметить, что социально-экономическое развитие способствует повышению качества переосмысления
+      внешнеэкономических политик.
+      <button id="myButton" class="tooltip-btn">i</button>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js" defer></script>
+  <script src="https://api-maps.yandex.ru/2.1/?apikey=ваш API-ключ&lang=ru_RU" type="text/javascript"></script>
+  <script src="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.min.js"></script>
+  <script src="/js/inputmask.js"></script>
+  <script src="/js/just-validate.min.js"></script>
+  <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js"></script>
+  <script src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js"></script>
+  <script src="/js/index.js"></script>
+</body>
+
+</html>
